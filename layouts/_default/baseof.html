@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="{{.Site.LanguageCode}}">
+    {{- partial "head.html" . -}}
+    <body>
+        <header class="bar">
+            <div id="title-group" class="group-row single-row no-select">
+                <span>{{.Site.Params.title}}</span>
+                <div class="divider-vertical"></div>
+                <span>{{.Site.Params.description}}</span>
+            </div>
+        </header>
+        <nav class="bar group-row no-select">
+            <div id="control-group" class="group-row single-row">
+                <a class="group-item" onclick="window.history.back()">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <a class="group-item" onclick="window.history.forward()">
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a class="group-item" {{with .Parent}}href="{{.Permalink}}"{{end}}>
+                    <i class="fas fa-arrow-up"></i>
+                </a>
+                <a class="group-item" onclick="location.reload()">
+                    <i class="fas fa-redo"></i>
+                </a>
+            </div>
+            <div id="breadcrumb" class="group-row single-row">
+                {{ template "breadcrumb" (dict "node" . "leaf" .) }}
+            </div>
+            <div id="search-group" class="group-row single-row">
+                <a class="group-item">
+                    <i class="fas fa-search"></i>
+                </a>
+                <input id="search-input" class="group-item" type="text">
+            </div>
+        </nav>
+        <main class="main group-row">
+            <aside class="aside group-col">
+                <div id="menu-group" class="group-col no-select">
+                    <a class="group-item">
+                        <i class="fas fa-star"></i> 快速访问
+                    </a>
+                    {{ range .Site.Menus.main }}
+                    <a class="group-item level-2" href="{{.URL}}">
+                        {{.Pre}} {{.Name}}
+                    </a>
+                    {{ end }}
+                </div>
+                <div id="section-group" class="group-col no-select">
+                    <a class="group-item" href="{{.Site.BaseURL}}">
+                        <i class="fas fa-home"></i> {{.Site.Params.title}}
+                    </a>
+                    {{ range .Site.Sections }}
+                    <a class="group-item level-2" href="{{.Permalink}}">
+                        <i class="fas fa-hdd"></i> {{.Title}}
+                    </a>
+                    {{ end }}
+                </div>
+                <div id="social-group" class="group-col no-select">
+                    <a class="group-item">
+                        <i class="fas fa-user-friends"></i> 其他媒体
+                    </a>
+                    {{ range .Site.Params.socials }}
+                    <a class="group-item level-2" rel="noopener noreferrer" target="_blank" href="{{.url}}">
+                        {{.pre | safeHTML}} {{.name}}
+                    </a>
+                    {{ end }}
+                </div>
+                {{ if and .IsPage .Params.showInfo }}
+                <div id="abstract-group" class="group-col">
+                    <!-- author -->
+                    <div class="group-item"><i class="fas fa-angle-right"></i> Author: {{delimit (slice | append .Params.author) `,`}}</div>
+                    <!-- date -->
+                    <div class="group-item"><i class="fas fa-angle-right"></i> Date: {{.Date.Format "2006/01/02"}} </div>
+                    <!-- tags -->
+                    <div class="group-item">
+                        <span style="float: left;"><i class="fas fa-angle-right"></i> Tags:&nbsp;&nbsp;</span>
+                        {{ with .Params.tags }}
+                        {{ range (slice | append .) }}
+                            <a class="tag" href="/tags/{{. | urlize}}">{{ . }}</a>
+                        {{ end }}
+                        {{ else }}
+                            <a class="tag">none</a>
+                        {{ end }}
+                    </div>
+                    <!-- description -->
+                    <div class="group-item">
+                        <span style="float: left;"><i class="fas fa-angle-right"></i> Description:&nbsp;&nbsp;</span>
+                        <span>{{.Description}}</span>
+                    </div>
+                </div>
+                {{ end }}
+                {{ if and .IsPage .Params.showTOC }}
+                <div id="toc">
+                    {{ .TableOfContents }}
+                </div>
+                {{ end }}
+            </aside>
+            <section class="content">
+                {{ block "main" . }}{{end}}
+            </section>
+        </main>
+    </body>
+</html>
+
+{{ define "breadcrumb" }}
+    {{ if .node.Parent }}
+        {{ template "breadcrumb" (dict "node" .node.Parent "leaf" .leaf)}}
+    {{ end }}
+    {{ $is_active := eq .node .leaf }}
+    {{ if .node.IsHome }}
+        <a class="group-item {{if $is_active}}active{{end}}"><i class="fas fa-folder"></i> </a>
+    {{ else }}
+        <a class="group-item {{if $is_active}}active{{end}}" href="{{.node.Permalink}}"><i class="fas fa-chevron-right"></i> {{ .node.Title }}</a>
+    {{ end }}
+{{ end }}
