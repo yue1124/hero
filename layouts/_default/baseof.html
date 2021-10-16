@@ -7,39 +7,43 @@
                 <span>{{.Site.Params.title}}</span>
                 <div class="divider-vertical"></div>
                 <span>{{.Site.Params.description}}</span>
+                <div class="divider-vertical"></div>
+                <span>© {{now.Year}} {{.Site.Params.author}}</span> 
+                <div class="divider-vertical"></div>
+                <span>Powered by <a rel="noopener noreferrer" target="_blank" href="https://gohugo.io/">Hugo</a> & theme  <a rel="noopener noreferrer" href="https://github.com/yue1124/hero" target="_blank">hero</a></span>
             </div>
         </header>
         <nav class="bar group-row no-select">
             <div id="control-group" class="group-row single-row">
-                <a class="group-item" onclick="window.history.back()">
+                <div class="group-item" onclick="window.history.back()">
                     <i class="fas fa-arrow-left"></i>
-                </a>
-                <a class="group-item" onclick="window.history.forward()">
+                </div>
+                <div class="group-item" onclick="window.history.forward()">
                     <i class="fas fa-arrow-right"></i>
-                </a>
+                </div>
                 <a class="group-item" {{with .Parent}}href="{{.Permalink}}"{{end}}>
                     <i class="fas fa-arrow-up"></i>
                 </a>
-                <a class="group-item" onclick="location.reload()">
+                <div class="group-item" onclick="location.reload()">
                     <i class="fas fa-redo"></i>
-                </a>
+                </div>
             </div>
             <div id="breadcrumb" class="group-row single-row">
                 {{ template "breadcrumb" (dict "node" . "leaf" .) }}
             </div>
             <div id="search-group" class="group-row single-row">
-                <a class="group-item">
+                <div class="group-item">
                     <i class="fas fa-search"></i>
-                </a>
+                </div>
                 <input id="search-input" class="group-item" type="text">
             </div>
         </nav>
         <main class="main group-row">
             <aside class="aside group-col">
                 <div id="menu-group" class="group-col no-select">
-                    <a class="group-item">
+                    <div class="group-item">
                         <i class="fas fa-star"></i> 快速访问
-                    </a>
+                    </div>
                     {{ range .Site.Menus.main }}
                     <a class="group-item level-2" href="{{.URL}}">
                         {{.Pre}} {{.Name}}
@@ -57,9 +61,9 @@
                     {{ end }}
                 </div>
                 <div id="social-group" class="group-col no-select">
-                    <a class="group-item">
-                        <i class="fas fa-user-friends"></i> 其他媒体
-                    </a>
+                    <div class="group-item">
+                        <i class="fas fa-user-friends"></i> 其他信息
+                    </div>
                     {{ range .Site.Params.socials }}
                     <a class="group-item level-2" rel="noopener noreferrer" target="_blank" href="{{.url}}">
                         {{.pre | safeHTML}} {{.name}}

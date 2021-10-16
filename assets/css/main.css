@@ -66,7 +66,7 @@ ul {
 #title-group {
     white-space: nowrap;
     font-size: var(--small-font-size);
-    color: var(--secondary);
+    color: var(--primary);
     border: 1px solid var(--primary);
     padding: 0 var(--small-gap);
     margin: var(--small-gap) 0;
