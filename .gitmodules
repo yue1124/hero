@@ -1,0 +1,3 @@
+[submodule "themes/hero"]
+	path = themes/hero
+	url = https://github.com/yue1124/hero.git
