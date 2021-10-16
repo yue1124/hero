@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>示例文件夹2 on </title>
-    <link>http://example.org/diska/folder2/</link>
+    <link>https://yue1124.github.io/hero/diska/folder2/</link>
     <description>Recent content in 示例文件夹2 on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language><atom:link href="http://example.org/diska/folder2/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language><atom:link href="https://yue1124.github.io/hero/diska/folder2/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

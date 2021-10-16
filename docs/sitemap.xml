@@ -2,75 +2,75 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://example.org/search/</loc>
+    <loc>https://yue1124.github.io/hero/search/</loc>
     <lastmod>2021-10-16T15:26:18+08:00</lastmod>
   </url><url>
-    <loc>http://example.org/about/</loc>
+    <loc>https://yue1124.github.io/hero/about/</loc>
     <lastmod>2021-10-16T15:26:13+08:00</lastmod>
   </url><url>
-    <loc>http://example.org/</loc>
+    <loc>https://yue1124.github.io/hero/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/categories/</loc>
+    <loc>https://yue1124.github.io/hero/categories/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/css/</loc>
+    <loc>https://yue1124.github.io/hero/tags/css/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/html/</loc>
+    <loc>https://yue1124.github.io/hero/tags/html/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/markdown/</loc>
+    <loc>https://yue1124.github.io/hero/tags/markdown/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/diska/markdown-syntax/</loc>
+    <loc>https://yue1124.github.io/hero/diska/markdown-syntax/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/categories/syntax/</loc>
+    <loc>https://yue1124.github.io/hero/categories/syntax/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://yue1124.github.io/hero/tags/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/categories/themes/</loc>
+    <loc>https://yue1124.github.io/hero/categories/themes/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/diska/</loc>
+    <loc>https://yue1124.github.io/hero/diska/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/privacy/</loc>
+    <loc>https://yue1124.github.io/hero/tags/privacy/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/diska/rich-content/</loc>
+    <loc>https://yue1124.github.io/hero/diska/rich-content/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/shortcodes/</loc>
+    <loc>https://yue1124.github.io/hero/tags/shortcodes/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/diska/placeholder-text/</loc>
+    <loc>https://yue1124.github.io/hero/diska/placeholder-text/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/text/</loc>
+    <loc>https://yue1124.github.io/hero/tags/text/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/diskb/math-typesetting/</loc>
+    <loc>https://yue1124.github.io/hero/diskb/math-typesetting/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/diskb/</loc>
+    <loc>https://yue1124.github.io/hero/diskb/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/emoji/</loc>
+    <loc>https://yue1124.github.io/hero/tags/emoji/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/diskb/emoji-support/</loc>
+    <loc>https://yue1124.github.io/hero/diskb/emoji-support/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/diskc/</loc>
+    <loc>https://yue1124.github.io/hero/diskc/</loc>
   </url><url>
-    <loc>http://example.org/diskd/</loc>
+    <loc>https://yue1124.github.io/hero/diskd/</loc>
   </url><url>
-    <loc>http://example.org/diska/folder1/</loc>
+    <loc>https://yue1124.github.io/hero/diska/folder1/</loc>
   </url><url>
-    <loc>http://example.org/diska/folder2/</loc>
+    <loc>https://yue1124.github.io/hero/diska/folder2/</loc>
   </url>
 </urlset>

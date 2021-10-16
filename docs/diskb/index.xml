@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>磁盘B on </title>
-    <link>http://example.org/diskb/</link>
+    <link>https://yue1124.github.io/hero/diskb/</link>
     <description>Recent content in 磁盘B on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 08 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/diskb/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://yue1124.github.io/hero/diskb/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Math Typesetting</title>
-      <link>http://example.org/diskb/math-typesetting/</link>
+      <link>https://yue1124.github.io/hero/diskb/math-typesetting/</link>
       <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/diskb/math-typesetting/</guid>
+      <guid>https://yue1124.github.io/hero/diskb/math-typesetting/</guid>
       <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Emoji Support</title>
-      <link>http://example.org/diskb/emoji-support/</link>
+      <link>https://yue1124.github.io/hero/diskb/emoji-support/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/diskb/emoji-support/</guid>
+      <guid>https://yue1124.github.io/hero/diskb/emoji-support/</guid>
       <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
     </item>
     

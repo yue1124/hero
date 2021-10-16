@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>磁盘C on </title>
-    <link>http://example.org/diskc/</link>
+    <link>https://yue1124.github.io/hero/diskc/</link>
     <description>Recent content in 磁盘C on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language><atom:link href="http://example.org/diskc/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language><atom:link href="https://yue1124.github.io/hero/diskc/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
