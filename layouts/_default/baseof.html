@@ -21,7 +21,7 @@
                 <div class="group-item" onclick="window.history.forward()">
                     <i class="fas fa-arrow-right"></i>
                 </div>
-                <a class="group-item" {{with .Parent}}href="{{.Permalink}}"{{end}}>
+                <a class="group-item" {{with .Parent}}href="{{.Permalink}}"{{else}}href="javascript:void(0)"{{end}}>
                     <i class="fas fa-arrow-up"></i>
                 </a>
                 <div class="group-item" onclick="location.reload()">
@@ -35,7 +35,7 @@
                 <div class="group-item">
                     <i class="fas fa-search"></i>
                 </div>
-                <input id="search-input" class="group-item" type="text">
+                <input id="search-input" class="group-item" type="text" aria-label="search input">
             </div>
         </nav>
         <main class="main group-row">
@@ -113,7 +113,7 @@
     {{ end }}
     {{ $is_active := eq .node .leaf }}
     {{ if .node.IsHome }}
-        <a class="group-item {{if $is_active}}active{{end}}"><i class="fas fa-folder"></i> </a>
+        <div class="group-item {{if $is_active}}active{{end}}"><i class="fas fa-folder"></i> </div>
     {{ else }}
         <a class="group-item {{if $is_active}}active{{end}}" href="{{.node.Permalink}}"><i class="fas fa-chevron-right"></i> {{ .node.Title }}</a>
     {{ end }}

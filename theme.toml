@@ -7,11 +7,11 @@ licenselink = "https://github.com/yue1124/hero/blob/main/LICENSE"
 description = "A hugo theme with File Manager Style. (Hugo Explorer ReadOnly)"
 
 homepage = "https://github.com/yue1124/hero"
-demosite = ""
+demosite = "https://yue1124.github.io/hero/"
 
 tags = ['simple', 'font awesome', 'katex', 'explorer', 'search']
 features = ['explorer', 'search', 'katex', 'toc']
 
 [author]
   name = "bigyue"
-  homepage = "https://bigyue.gitee.io"
+  homepage = "https://yue1124.github.io/"

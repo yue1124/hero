@@ -8,11 +8,11 @@ This project mainly wants to make a file manager stlye's blog website.
 
 **SectionPage**
 
-![sectionpage](./imgs/ScreenShot.png)
+![sectionpage](https://raw.githubusercontent.com/yue1124/hero/main/images/screenshot.png)
 
 **PostPage**
 
-![postpage](./imgs/ScreenShotPost.png)
+![postpage](https://raw.githubusercontent.com/yue1124/hero/main/images/singlepage.png)
 
 ---
 
