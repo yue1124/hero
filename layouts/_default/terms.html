@@ -1,21 +1,15 @@
-{{define "main"}}
-{{ $type := .Data.Singular }}
-<section id="entry-group" class="group-col">
-    <!-- name | date | type | size -->
-    <section class="entry group-item group-row single-row">
-        <span class="group-item entry-name">名称</span>
-        <span class="group-item entry-date">修改日期</span>
-        <span class="group-item entry-type">类型</span>
-        <span class="group-item entry-size">大小</span>
-    </section>
-    {{ $base := .Permalink }}
-    {{ range .Data.Terms.Alphabetical }}
-    <section class="entry group-item group-row single-row">
-        <span class="group-item entry-name"><a href="{{$base}}{{.Name}}"><i class="fas fa-hashtag"></i> {{ .Name }}</a></span>
-        <span class="group-item entry-date"></span>
-        <span class="group-item entry-type">{{ $type | upper}}</span>
-        <span class="group-item entry-size">{{len .Pages}}</span>
-    </section>
+{{ define "widgets" }}
+    {{ $ctx := . }}
+    {{ range .Site.Params.widgets.terms }}
+        {{ $path := replace "widgets/X.html" "X" .}}
+        {{- partial $path $ctx -}}
     {{ end }}
-</section>
-{{end}}
+{{ end }}
+
+{{ define "blocks" }}
+    {{ $ctx := . }}
+    {{ range .Site.Params.blocks.terms }}
+        {{ $path := replace "blocks/X.html" "X" .}}
+        {{- partial $path $ctx -}}
+    {{ end }}
+{{ end }}

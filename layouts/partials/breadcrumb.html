@@ -1,0 +1,13 @@
+
+{{ template "breadcrumb" (dict "node" . "leaf" . ) }}
+
+{{ define "breadcrumb" }}
+    {{ if .node.Parent }}
+        {{ template "breadcrumb" (dict "node" .node.Parent "leaf" .leaf)}}
+    {{ end }}
+    {{ if .node.IsHome }}
+    {{ else }}
+        <div class="flex-row-item"><i class="iconfont icon-jiantouyou"></i></div>
+        <a class="flex-row-item link" href="{{.node.Permalink}}">{{ .node.Title }}</a>
+    {{ end }}
+{{ end }}

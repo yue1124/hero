@@ -1,0 +1,41 @@
+<div id="profile-block" class="block">
+    <style>
+        #profile-block {
+            max-width: 1020px;
+            margin: 0 auto;
+            height: 100%;
+        }
+        #avatar {
+            width: 300px;
+            border-radius: 40px;
+            object-fit: contain;
+        }
+        .profile-link {
+            margin: 0 0.25em;
+            font-size: 22px;
+            font-weight: 500;
+        }
+    </style>
+    {{ $profile := .Site.Params.profile | default (dict "avatar" "/img/logo.png") }}
+    <section class="flex-single-row flex-align-center">
+        <section class="flex-single-col flex-align-center">
+            <main class="flex-single-col flex-align-center">
+                <img id="avatar" src="{{ $profile.avatar }}"  alt="avatar">
+                <h1>
+                    {{ $profile.head  | default "这里可以写一些东西（当然你也可以不写）。"}}
+                </h1>
+                <div>
+                    {{ range .Site.Sections }}
+                    <a class="button-link profile-link" href="{{.Permalink}}">{{.Title}}</a>
+                    {{ end }}
+                </div>
+                <div>
+                    {{ range $profile.links }}
+                    <a class="button-link profile-link" href="{{.url | urlize}}">{{.text | emojify}}</a>
+                    {{ end }}
+                </div>
+            </main>
+        </section>
+    </section>
+    <!-- 文字 -->
+</div>

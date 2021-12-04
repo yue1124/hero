@@ -1,0 +1,41 @@
+<div id="folder-block" class="block">
+    <style>
+        .folderview-name,
+        .folderview-date,
+        .folderview-size,
+        .folderview-type {
+            min-width: 10em;
+        }
+    </style>
+    <section id="folderview-header" class="flex-single-row">
+        <span class="flex-row-item flex-rest-item folderview-name">名称</span>
+        <span class="flex-row-item folderview-date">修改日期</span>
+        <span class="flex-row-item folderview-type">类型</span>
+        <span class="flex-row-item folderview-size">大小</span>
+    </section>
+    <section id="folderview-body" class="flex-single-col">
+        {{ range .Sections }}
+        <div class="flex-single-row">
+            <span class="flex-row-item flex-rest-item folderview-name">
+                <a href="{{.Permalink}}">{{ .Title }}</a>
+            </span>
+            <span class="flex-row-item folderview-date"></span>
+            <span class="flex-row-item folderview-type">{{ i18n "section"}}</span>
+            <span class="flex-row-item folderview-size">{{ i18n "page" (dict "Count" (len .Pages))}}</span>
+        </div>
+        {{ end }}
+        {{ range .RegularPages }}
+        <div class="flex-single-row">
+            <span class="flex-row-item flex-rest-item folderview-name">
+                <a href="{{.Permalink}}"><i class="fas fa-folder"></i>{{ .Title }}</a>
+            </span>
+            <span class="flex-row-item folderview-date">{{.Date.Format "2006/01/02 15:04"}}</span>
+            <span class="flex-row-item folderview-type">{{if .Draft}}{{i18n "draft"}}{{else}}{{i18n "post"}}{{end}}</span>
+            <span class="flex-row-item folderview-size">{{ i18n "word" (dict "Count" .WordCount) }}</span>
+        </div>
+        {{ end }}
+        {{ if (and (eq (len .Sections) 0) (eq (len .RegularPages) 0))}}
+        {{ i18n "folder_empty" }}
+        {{ end }}
+    </section>
+</div>

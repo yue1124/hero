@@ -1,6 +1,6 @@
 {{ define "widgets" }}
     {{ $ctx := . }}
-    {{ range .Site.Params.widgets.single }}
+    {{ range .Site.Params.widgets.home }}
         {{ $path := replace "widgets/X.html" "X" .}}
         {{- partial $path $ctx -}}
     {{ end }}
@@ -8,7 +8,7 @@
 
 {{ define "blocks" }}
     {{ $ctx := . }}
-    {{ range .Site.Params.blocks.single }}
+    {{ range .Site.Params.blocks.home }}
         {{ $path := replace "blocks/X.html" "X" .}}
         {{- partial $path $ctx -}}
     {{ end }}

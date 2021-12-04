@@ -1,0 +1,14 @@
+<div id="section-widget" class="widget">
+    <span class="widget-header">
+        <i class="iconfont icon-jiantouxia widget-fold-control"></i>{{ i18n "all_sections"}}
+    </span>
+    <div class="widget-body" style="user-select: none;">
+        <div class="flex-single-col">
+            {{ range .Site.Sections }}
+            <a class="link" href="{{.Permalink}}">
+                <i class='iconfont {{ .Params.icon | default "icon-circle" }}'></i>{{.Title}}
+            </a>
+            {{ end }}
+        </div>
+    </div>
+</div>
