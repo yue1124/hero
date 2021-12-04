@@ -1,0 +1,17 @@
+<div id="welcome-widget" class="widget">
+    <span class="widget-header">
+        <i class="iconfont icon-jiantouxia widget-fold-control"></i>
+        {{ with .Site.Params.welcome }}
+        {{ .head }}
+        {{ else }}
+        {{ i18n "welcome"}}
+        {{ end }}
+    </span>
+    <div class="widget-body" style="user-select: none;">
+        {{ with .Site.Params.welcome }}
+        {{ .body }}
+        {{ else }}
+        {{ i18n "welcome_empty" }}
+        {{ end }}
+    </div>
+</div>
