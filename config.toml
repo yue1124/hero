@@ -1,36 +1,64 @@
 baseURL = 'https://yue1124.github.io/hero/'
-languageCode = 'zh-cn'
+defaultContentLanguage = 'zh'
 theme = 'hero'
+enableEmoji = true
 
-[params]
-    title = 'Demo'
-    author = 'bigyue'
-    description = '这是一个模拟文件管理器的博客网站 随便怎样都行吧'
+[languages]
+    [languages.en]
+        title = 'Demo'
+        description = 'A demo of theme hero'
+
+    [languages.zh]
+        title = '样例'
+        description = '关于主题hero的样例网站'
 
 [outputs]
-    home = ['HTML', 'JSON'] # index.json is used for search
+    home = ["HTML", "JSON"]
 
-[[menu.main]]
-    name = '标签'
-    pre = "<i class='fas fa-tags'></i>"
-    url = '/tags/'
+[params]
+    author = 'bigyue'
+    iconfont = '//at.alicdn.com/t/font_2881911_o39brzj1llb.css'
 
-[[menu.main]]
-    name = '分类'
-    pre = "<i class='fas fa-asterisk'></i>"
-    url = '/categories/'
+[params.widgets]
+    home = [
+        "section",
+        "welcome"
+    ]
+    section = [
+        "section"
+    ]
+    single = [
+        "section"
+    ]
+    term = []
+    terms = [
+        "section"
+    ]
 
-[[menu.main]]
-    name = '相关信息'
-    pre = "<i class='fas fa-user'></i>"
-    url = '/about/'
+[params.blocks]
+    home = [
+        "profile"
+    ]
+    section = [
+        "folder"
+    ]
+    single = [
+        "markdown"
+    ]
+    term = []
+    terms = [
+    ]
 
-[[params.socials]]
-    name = 'github'
-    pre = "<i class='fab fa-github'></i>"
-    url = 'https://github.com/yue1124'
+[params.welcome]
+    head = '你好呀！^.^'
+    body = '这里是Hugo主题hero的样例网站，更多详细信息请查看主题首页。'
 
-[[params.socials]]
-    name = 'gitee'
-    pre = "<i class='fab fa-github'></i>"
-    url = 'https://gitee.com/bigyue'
+[params.profile]
+    avatar = '/img/logo.png'
+    head = '请随意替换此文本，或者不要'
+    [[params.profile.links]]
+        url = 'tags'
+        text = '标签'
+    [[params.profile.links]]
+        url = 'categories'
+        text = '分类'
