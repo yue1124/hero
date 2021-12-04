@@ -1,120 +1,110 @@
 <!DOCTYPE html>
-<html lang="{{.Site.LanguageCode}}">
+<html lang="{{.Site.Language.Lang}}">
+<head>
     {{- partial "head.html" . -}}
-    <body>
-        <header class="bar">
-            <div id="title-group" class="group-row single-row no-select">
-                <span>{{.Site.Params.title}}</span>
-                <div class="divider-vertical"></div>
-                <span>{{.Site.Params.description}}</span>
-                <div class="divider-vertical"></div>
-                <span>© {{now.Year}} {{.Site.Params.author}}</span> 
-                <div class="divider-vertical"></div>
-                <span>Powered by <a rel="noopener noreferrer" target="_blank" href="https://gohugo.io/">Hugo</a> & theme  <a rel="noopener noreferrer" href="https://github.com/yue1124/hero" target="_blank">hero</a></span>
-            </div>
-        </header>
-        <nav class="bar group-row no-select">
-            <div id="control-group" class="group-row single-row">
-                <div class="group-item" onclick="window.history.back()">
-                    <i class="fas fa-arrow-left"></i>
-                </div>
-                <div class="group-item" onclick="window.history.forward()">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
-                <a class="group-item" {{with .Parent}}href="{{.Permalink}}"{{else}}href="javascript:void(0)"{{end}}>
-                    <i class="fas fa-arrow-up"></i>
-                </a>
-                <div class="group-item" onclick="location.reload()">
-                    <i class="fas fa-redo"></i>
-                </div>
-            </div>
-            <div id="breadcrumb" class="group-row single-row">
-                {{ template "breadcrumb" (dict "node" . "leaf" .) }}
-            </div>
-            <div id="search-group" class="group-row single-row">
-                <div class="group-item">
-                    <i class="fas fa-search"></i>
-                </div>
-                <input id="search-input" class="group-item" type="text" aria-label="search input">
-            </div>
-        </nav>
-        <main class="main group-row">
-            <aside class="aside group-col">
-                <div id="menu-group" class="group-col no-select">
-                    <div class="group-item">
-                        <i class="fas fa-star"></i> 快速访问
-                    </div>
-                    {{ range .Site.Menus.main }}
-                    <a class="group-item level-2" href="{{.URL}}">
-                        {{.Pre}} {{.Name}}
-                    </a>
+</head>
+<body>
+    {{ block "body" . }}
+    <main id="app" class="flex-single-col">
+        <section id="title-bar" class="flex-col-item">
+            <div class="flex-single-row flex-align-center">
+                <div class="flex-single-row flex-rest-item with-border flex-align-center">
+                    <div class="flex-row-item">{{.Site.Params.title | default "There's no home title."}}</div>
+                    <div class="flex-row-item divider-vertical"></div>
+                    <div class="flex-row-item">{{.Site.Params.description | default "There's no home description."}}</div>
+                    <div class="flex-row-item divider-vertical"></div>
+                    {{ with .Title }}
+                    <div class="flex-row-item flex-rest-item" style="text-align: center; white-space: nowrap;">{{.}}</div>
+                    {{ else }}
+                    <div class="flex-row-item flex-rest-item"></div>
                     {{ end }}
-                </div>
-                <div id="section-group" class="group-col no-select">
-                    <a class="group-item" href="{{.Site.BaseURL}}">
-                        <i class="fas fa-home"></i> {{.Site.Params.title}}
-                    </a>
-                    {{ range .Site.Sections }}
-                    <a class="group-item level-2" href="{{.Permalink}}">
-                        <i class="fas fa-hdd"></i> {{.Title}}
-                    </a>
+                    {{ with .Site.Params.copyright }}
+                    <div class="flex-row-item divider-vertical"></div>
+                    <div class="flex-row-item">{{.}}</div>
+                    {{ else }}
+                    <div class="flex-row-item divider-vertical"></div>
+                    <div class="flex-row-item">© {{now.Year}} {{.Site.Params.author}}</div>
                     {{ end }}
+                    <div class="flex-row-item divider-vertical"></div>
+                    <div class="flex-row-item">Powered by <a class="link" rel="noopener noreferrer" href="https://gohugo.io/" target="_blank">Hugo</a> & theme <a class="link" rel="noopener noreferrer" href="https://themes.gohugo.io/themes/hero/" target="_blank">hero</a></div>
                 </div>
-                <div id="social-group" class="group-col no-select">
-                    <div class="group-item">
-                        <i class="fas fa-user-friends"></i> 其他信息
-                    </div>
-                    {{ range .Site.Params.socials }}
-                    <a class="group-item level-2" rel="noopener noreferrer" target="_blank" href="{{.url}}">
-                        {{.pre | safeHTML}} {{.name}}
-                    </a>
+            </div>
+            <!-- Title Bar: | title | description | xxx...xxx | copyright | powered | -->
+        </section>
+        <section id="tool-bar" class="flex-col-item">
+            <!-- Tool Bar: | Nav tool | breadcrumb | other tool | search tool | -->
+            <div class="flex-single-row flex-align-center">
+                <section id="nav-tool" class="flex-single-row flex-row-item flex-align-center">
+                    <!-- Nav Tool: backward | forward | parent | home -->
+                    <span id="nav-parent" class="flex-row-item"><i class="iconfont icon-shang"></i></span>
+                    <span id="nav-home" class="flex-row-item"><i class="iconfont icon-a-shouyezhuyefangzi"></i></span>
+                </section>
+                <section id="breadcrumb-tool" class="flex-single-row flex-row-item flex-rest-item with-border flex-align-center">
+                    <!-- breadcrumb: ○ > section 1 > section 2  -->
+                    {{ if .IsPage }}
+                    {{- partial "breadcrumb.html" .Parent -}}
+                    {{ else }}
+                    {{- partial "breadcrumb.html" . -}}
                     {{ end }}
-                </div>
-                {{ if and .IsPage .Params.showInfo }}
-                <div id="abstract-group" class="group-col">
-                    <!-- author -->
-                    <div class="group-item"><i class="fas fa-angle-right"></i> Author: {{delimit (slice | append .Params.author) `,`}}</div>
-                    <!-- date -->
-                    <div class="group-item"><i class="fas fa-angle-right"></i> Date: {{.Date.Format "2006/01/02"}} </div>
-                    <!-- tags -->
-                    <div class="group-item">
-                        <span style="float: left;"><i class="fas fa-angle-right"></i> Tags:&nbsp;&nbsp;</span>
-                        {{ with .Params.tags }}
-                        {{ range (slice | append .) }}
-                            <a class="tag" href="/tags/{{. | urlize}}">{{ . }}</a>
+                </section>
+                <section id="other-tool" class="flex-single-row flex-row-item flex-align-center">
+                    <!-- Other tool: Dark/Light | Focus -->
+                    <span id="toggler-dark" class="flex-row-item"><i class="iconfont icon-Daytimemode"></i></span>
+                    <span id="toggler-layout" class="flex-row-item"><i class="iconfont icon-layout"></i></span>
+                </section>
+                <section id="search-tool" class="flex-single-row flex-row-item with-border flex-align-center">
+                    <span><i class="iconfont icon-sousuo"></i></span>
+                    <input id="search-input" placeholder='{{ i18n "search" }}' type="text" />
+                </section>
+            </div>
+        </section>
+        <section id="main-body" class="flex-col-item flex-rest-item">
+            <!-- Main Body: | aside | main content | -->
+            {{ block "main-body" . }}
+            <div class="flex-single-row">
+                <aside id="body-aside" class="flex-row-item">
+                    <section id="widgets">
+                        {{ block "widgets" .}}
                         {{ end }}
-                        {{ else }}
-                            <a class="tag">none</a>
+                    </section>
+                    <div class="width-control"></div>
+                </aside>
+                <div id="body-aside-divider" class="flex-row-item divider-vertical" style="height: auto;"></div>
+                <main id="body-content" class="flex-row-item flex-rest-item">
+                    <div id="blocks">
+                        {{ block "blocks" . }}
                         {{ end }}
                     </div>
-                    <!-- description -->
-                    <div class="group-item">
-                        <span style="float: left;"><i class="fas fa-angle-right"></i> Description:&nbsp;&nbsp;</span>
-                        <span>{{.Description}}</span>
+                </main>
+            </div>
+            {{ end }}
+            <section id="search-result">
+                <div class="flex-single-row">
+                    <div id="search-result-mask" class="flex-row-item flex-rest-item"></div>
+                    <div id="result-mask-divider" class="flex-row-item divider-vertical" style="height: auto;"></div>
+                    <div id="search-result-content" class="flex-row-item">
+                        输入回车键，查看搜索结果。
                     </div>
                 </div>
-                {{ end }}
-                {{ if and .IsPage .Params.showTOC }}
-                <div id="toc">
-                    {{ .TableOfContents }}
-                </div>
-                {{ end }}
-            </aside>
-            <section class="content">
-                {{ block "main" . }}{{end}}
             </section>
-        </main>
-    </body>
+        </section>
+    </main>
+    <script>
+        document.getElementById("nav-parent").onclick = function(e) {
+            {{- if .IsHome -}}
+                // do nothing
+            {{ else }}
+                window.location.href = {{ .Parent.Permalink }};
+            {{- end}}
+        }
+        document.getElementById("nav-home").onclick = function(e) {
+            {{- if .IsHome -}}
+                // do nothing
+            {{ else }}
+                window.location.href = {{ .Site.BaseURL }};
+            {{- end }}
+        }
+    </script>
+    {{ end }}
+</body>
 </html>
-
-{{ define "breadcrumb" }}
-    {{ if .node.Parent }}
-        {{ template "breadcrumb" (dict "node" .node.Parent "leaf" .leaf)}}
-    {{ end }}
-    {{ $is_active := eq .node .leaf }}
-    {{ if .node.IsHome }}
-        <div class="group-item {{if $is_active}}active{{end}}"><i class="fas fa-folder"></i> </div>
-    {{ else }}
-        <a class="group-item {{if $is_active}}active{{end}}" href="{{.node.Permalink}}"><i class="fas fa-chevron-right"></i> {{ .node.Title }}</a>
-    {{ end }}
-{{ end }}

@@ -1,0 +1,29 @@
+[all_sections]
+    other = '全部分区'
+
+[search]
+    other = '搜索'
+
+[section]
+    other = '分区'
+
+[page]
+    other = '{{.Count}} 页'
+    
+[word]
+    other = '{{.Count}}个字'
+
+[draft]
+    other = '未发布草稿'
+
+[post]
+    other = '已发布文章'
+
+[welcome]
+    other = '你好呀！'
+    
+[welcome_empty]
+    other = '通过设置welcome.body，写下出现在这里的话。'
+
+[folder_empty]
+    other = '这个分区里什么都没有。'

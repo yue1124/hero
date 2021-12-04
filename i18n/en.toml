@@ -1,0 +1,31 @@
+[all_sections]
+    other = 'All Sections'
+
+[search]
+    other = 'Search'
+
+[section]
+    other = 'Section'
+
+[page]
+    one = '1 page'
+    other = '{{.Count}} pages'
+
+[word]
+    one = '1 word'
+    other = '{{.Count}} words'
+
+[draft]
+    other = 'Draft'
+
+[post]
+    other = 'Post'
+
+[welcome]
+    other = 'Welcome'
+
+[welcome_empty]
+    other = 'There is no welcome words here. You can write in the config entry `welcome.body`'
+
+[folder_empty]
+    other = 'This is an empty section'

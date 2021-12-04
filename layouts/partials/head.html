@@ -1,43 +1,35 @@
+{{/* Variables */}}
+{{ $author := $.Param "author" | default "Anonymous" }}
+{{ $description := $.Param "description" | default "There's no description." }}
+{{ $pageTitle := .Title | default "There's no page title." }}
+{{ $homeTitle := .Site.Params.title | default "There's no home title." }}
+
 {{/* Meta */}}
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author" content="{{delimit (slice | append (cond .IsPage .Params.author .Site.Params.author)) `,`}}">
-<meta name="description" content="{{cond .IsPage .Description .Site.Params.description}}">
+<meta name="author" content="{{$author}}">
+<meta name="description" content="{{$description}}">
+
+{{/* Keywords 关键字据说已经在大部分搜索引擎中的权重已经很小了，可有可无 */}}
 
 {{/* Title */}}
-<title>{{if .IsPage }}{{.Title}} | {{end}}{{.Site.Params.title}}</title>
+<title>{{if .IsHome}}{{$homeTitle}}{{else}}{{$pageTitle}} | {{$homeTitle}}{{end}}</title>
 
 {{/* Style */}}
-<link crossorigin="anonymous" rel="preload stylesheet" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
-{{ $style := resources.Get "css/main.css" | minify }}
-<link crossorigin="anonymous" rel="preload stylesheet" as="style" href="{{$style.RelPermalink}}">
-{{ if .IsPage }}
-{{ $markdown := resources.Get "css/markdown.css" | minify }}
-<link crossorigin="anonymous" rel="preload stylesheet" as="style" href="{{$markdown.RelPermalink}}">
+
+{{/* IconFont */}}
+{{ with .Site.Params.iconfont }}
+<link rel="stylesheet" href="{{. | urlize}}">
 {{ end }}
 
+{{ $style := resources.Get "css/main.css" | minify }}
+<link crossorigin="anonymous" rel="preload stylesheet" as="style" href="{{$style.RelPermalink}}">
 
 {{/* Javascript */}}
 
-{{/* KaTex */}}
-{{ if or .Site.Params.math .Params.math }}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
-
-<!-- The loading of KaTeX is deferred to speed up page rendering -->
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
-
-<!-- To automatically render math in text elements, include the auto-render extension: -->
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
-    onload="renderMathInElement(document.getElementById('markdown'));"></script>
-{{ end }}
-
-{{ if eq .Layout `search` }}
-<link crossorigin="anonymous" rel="preload" as="fetch" href="../index.json">
-{{ $search_js := resources.Get "js/search.js" | js.Build (dict "params" (dict "searchOpts" .Site.Params.searchOpts))}}
-{{ $search := slice $search_js | resources.Concat "assets/js/search.js" | minify}}
-<script defer crossorigin="anonymous" src="{{ $search.RelPermalink}}"></script>
-{{ end }}
-
-{{ $base := resources.Get "js/base.js" | minify }}
-<script defer crossorigin="anonymous" src="{{ $base.RelPermalink}}"></script>
+{{/* fuse.js for search */}}
+{{ $fusejs := resources.Get "js/fuse.js" | minify }}
+<script defer crossorigin="anonymous" src="{{ $fusejs.RelPermalink}}"></script>
+{{ $script := resources.Get "js/main.js" | minify }}
+<script defer crossorigin="anonymous" src="{{ $script.RelPermalink}}"></script>
