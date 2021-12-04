@@ -1,16 +1,31 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh">
+<head>
+	<meta name="generator" content="Hugo 0.90.0-DEV" />
+
+
+
+
+
+
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="bigyue">
-<meta name="description" content="这是一个模拟文件管理器的博客网站 随便怎样都行吧">
+<meta name="description" content="关于主题hero的样例网站">
 
 
-<title>Demo</title>
 
 
-<link crossorigin="anonymous" rel="preload stylesheet" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+<title>样例</title>
+
+
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_2881911_o39brzj1llb.css">
+
+
 
 <link crossorigin="anonymous" rel="preload stylesheet" as="style" href="/hero/css/main.min.css">
 
@@ -18,160 +33,193 @@
 
 
 
+<script defer crossorigin="anonymous" src="/hero/js/fuse.min.js"></script>
 
-
-
-
-
-
-<script defer crossorigin="anonymous" src="/hero/js/base.min.js"></script>
+<script defer crossorigin="anonymous" src="/hero/js/main.min.js"></script></head>
 <body>
-        <header class="bar">
-            <div id="title-group" class="group-row single-row no-select">
-                <span>Demo</span>
-                <div class="divider-vertical"></div>
-                <span>这是一个模拟文件管理器的博客网站 随便怎样都行吧</span>
-                <div class="divider-vertical"></div>
-                <span>© 2021 bigyue</span> 
-                <div class="divider-vertical"></div>
-                <span>Powered by <a rel="noopener noreferrer" target="_blank" href="https://gohugo.io/">Hugo</a> & theme  <a rel="noopener noreferrer" href="https://github.com/yue1124/hero" target="_blank">hero</a></span>
-            </div>
-        </header>
-        <nav class="bar group-row no-select">
-            <div id="control-group" class="group-row single-row">
-                <div class="group-item" onclick="window.history.back()">
-                    <i class="fas fa-arrow-left"></i>
-                </div>
-                <div class="group-item" onclick="window.history.forward()">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
-                <a class="group-item" href="javascript:void(0)">
-                    <i class="fas fa-arrow-up"></i>
-                </a>
-                <div class="group-item" onclick="location.reload()">
-                    <i class="fas fa-redo"></i>
+    
+    <main id="app" class="flex-single-col">
+        <section id="title-bar" class="flex-col-item">
+            <div class="flex-single-row flex-align-center">
+                <div class="flex-single-row flex-rest-item with-border flex-align-center">
+                    <div class="flex-row-item">样例</div>
+                    <div class="flex-row-item divider-vertical"></div>
+                    <div class="flex-row-item">关于主题hero的样例网站</div>
+                    <div class="flex-row-item divider-vertical"></div>
+                    
+                    <div class="flex-row-item flex-rest-item" style="text-align: center; white-space: nowrap;">样例</div>
+                    
+                    
+                    <div class="flex-row-item divider-vertical"></div>
+                    <div class="flex-row-item">© 2021 bigyue</div>
+                    
+                    <div class="flex-row-item divider-vertical"></div>
+                    <div class="flex-row-item">Powered by <a class="link" rel="noopener noreferrer" href="https://gohugo.io/" target="_blank">Hugo</a> & theme <a class="link" rel="noopener noreferrer" href="https://themes.gohugo.io/themes/hero/" target="_blank">hero</a></div>
                 </div>
             </div>
-            <div id="breadcrumb" class="group-row single-row">
-                
+            
+        </section>
+        <section id="tool-bar" class="flex-col-item">
+            
+            <div class="flex-single-row flex-align-center">
+                <section id="nav-tool" class="flex-single-row flex-row-item flex-align-center">
+                    
+                    <span id="nav-parent" class="flex-row-item"><i class="iconfont icon-shang"></i></span>
+                    <span id="nav-home" class="flex-row-item"><i class="iconfont icon-a-shouyezhuyefangzi"></i></span>
+                </section>
+                <section id="breadcrumb-tool" class="flex-single-row flex-row-item flex-rest-item with-border flex-align-center">
+                    
+                    
+
     
     
-    
-        <div class="group-item active"><i class="fas fa-folder"></i> </div>
     
 
-            </div>
-            <div id="search-group" class="group-row single-row">
-                <div class="group-item">
-                    <i class="fas fa-search"></i>
-                </div>
-                <input id="search-input" class="group-item" type="text" aria-label="search input">
-            </div>
-        </nav>
-        <main class="main group-row">
-            <aside class="aside group-col">
-                <div id="menu-group" class="group-col no-select">
-                    <div class="group-item">
-                        <i class="fas fa-star"></i> 快速访问
-                    </div>
-                    
-                    <a class="group-item level-2" href="/hero/categories/">
-                        <i class='fas fa-asterisk'></i> 分类
-                    </a>
-                    
-                    <a class="group-item level-2" href="/hero/tags/">
-                        <i class='fas fa-tags'></i> 标签
-                    </a>
-                    
-                    <a class="group-item level-2" href="/hero/about/">
-                        <i class='fas fa-user'></i> 相关信息
-                    </a>
-                    
-                </div>
-                <div id="section-group" class="group-col no-select">
-                    <a class="group-item" href="https://yue1124.github.io/hero/">
-                        <i class="fas fa-home"></i> Demo
-                    </a>
-                    
-                    <a class="group-item level-2" href="https://yue1124.github.io/hero/diska/">
-                        <i class="fas fa-hdd"></i> 磁盘A
-                    </a>
-                    
-                    <a class="group-item level-2" href="https://yue1124.github.io/hero/diskb/">
-                        <i class="fas fa-hdd"></i> 磁盘B
-                    </a>
-                    
-                    <a class="group-item level-2" href="https://yue1124.github.io/hero/diskc/">
-                        <i class="fas fa-hdd"></i> 磁盘C
-                    </a>
-                    
-                    <a class="group-item level-2" href="https://yue1124.github.io/hero/diskd/">
-                        <i class="fas fa-hdd"></i> 磁盘D
-                    </a>
-                    
-                </div>
-                <div id="social-group" class="group-col no-select">
-                    <div class="group-item">
-                        <i class="fas fa-user-friends"></i> 其他信息
-                    </div>
-                    
-                    <a class="group-item level-2" rel="noopener noreferrer" target="_blank" href="https://github.com/yue1124">
-                        <i class='fab fa-github'></i> github
-                    </a>
-                    
-                    <a class="group-item level-2" rel="noopener noreferrer" target="_blank" href="https://gitee.com/bigyue">
-                        <i class='fab fa-github'></i> gitee
-                    </a>
-                    
-                </div>
-                
-                
-            </aside>
-            <section class="content">
-                
-<section id="entry-group" class="group-col">
-    
-    <section class="entry group-item group-row single-row">
-        <span class="group-item entry-name">名称</span>
-        <span class="group-item entry-date">修改日期</span>
-        <span class="group-item entry-type">类型</span>
-        <span class="group-item entry-size">大小</span>
-    </section>
-    
-    <section class="entry group-item group-row single-row">
-        <span class="group-item entry-name"><a href="https://yue1124.github.io/hero/diska/"><i class="fas fa-folder"></i> 磁盘A</a></span>
-        <span class="group-item entry-date"></span>
-        <span class="group-item entry-type">FOLD</span>
-        <span class="group-item entry-size">5</span>
-    </section>
-    
-    <section class="entry group-item group-row single-row">
-        <span class="group-item entry-name"><a href="https://yue1124.github.io/hero/diskb/"><i class="fas fa-folder"></i> 磁盘B</a></span>
-        <span class="group-item entry-date"></span>
-        <span class="group-item entry-type">FOLD</span>
-        <span class="group-item entry-size">2</span>
-    </section>
-    
-    <section class="entry group-item group-row single-row">
-        <span class="group-item entry-name"><a href="https://yue1124.github.io/hero/diskc/"><i class="fas fa-folder"></i> 磁盘C</a></span>
-        <span class="group-item entry-date"></span>
-        <span class="group-item entry-type">FOLD</span>
-        <span class="group-item entry-size">0</span>
-    </section>
-    
-    <section class="entry group-item group-row single-row">
-        <span class="group-item entry-name"><a href="https://yue1124.github.io/hero/diskd/"><i class="fas fa-folder"></i> 磁盘D</a></span>
-        <span class="group-item entry-date"></span>
-        <span class="group-item entry-type">FOLD</span>
-        <span class="group-item entry-size">0</span>
-    </section>
-    
-    
-    
-</section>
 
+
+                </section>
+                <section id="other-tool" class="flex-single-row flex-row-item flex-align-center">
+                    
+                    <span id="toggler-dark" class="flex-row-item"><i class="iconfont icon-Daytimemode"></i></span>
+                    <span id="toggler-layout" class="flex-row-item"><i class="iconfont icon-layout"></i></span>
+                </section>
+                <section id="search-tool" class="flex-single-row flex-row-item with-border flex-align-center">
+                    <span><i class="iconfont icon-sousuo"></i></span>
+                    <input id="search-input" placeholder='搜索' type="text" />
+                </section>
+            </div>
+        </section>
+        <section id="main-body" class="flex-col-item flex-rest-item">
+            
+            
+            <div class="flex-single-row">
+                <aside id="body-aside" class="flex-row-item">
+                    <section id="widgets">
+                        
+    
+    
+        <div id="section-widget" class="widget">
+    <span class="widget-header">
+        <i class="iconfont icon-jiantouxia widget-fold-control"></i>全部分区
+    </span>
+    <div class="widget-body" style="user-select: none;">
+        <div class="flex-single-col">
+            
+            <a class="link" href="https://yue1124.github.io/hero/diska/">
+                <i class='iconfont icon-chaogaosuyunyingpan'></i>磁盘A
+            </a>
+            
+            <a class="link" href="https://yue1124.github.io/hero/diskb/">
+                <i class='iconfont icon-chaogaosuyunyingpan'></i>磁盘B
+            </a>
+            
+            <a class="link" href="https://yue1124.github.io/hero/diskc/">
+                <i class='iconfont icon-chaogaosuyunyingpan'></i>磁盘C
+            </a>
+            
+            <a class="link" href="https://yue1124.github.io/hero/diskd/">
+                <i class='iconfont icon-chaogaosuyunyingpan'></i>磁盘D
+            </a>
+            
+        </div>
+    </div>
+</div>
+        <div id="welcome-widget" class="widget">
+    <span class="widget-header">
+        <i class="iconfont icon-jiantouxia widget-fold-control"></i>
+        
+        你好呀！^.^
+        
+    </span>
+    <div class="widget-body" style="user-select: none;">
+        
+        这里是Hugo主题hero的样例网站，更多详细信息请查看主题首页。
+        
+    </div>
+</div>
+
+                    </section>
+                    <div class="width-control"></div>
+                </aside>
+                <div id="body-aside-divider" class="flex-row-item divider-vertical" style="height: auto;"></div>
+                <main id="body-content" class="flex-row-item flex-rest-item">
+                    <div id="blocks">
+                        
+    
+    
+        <div id="profile-block" class="block">
+    <style>
+        #profile-block {
+            max-width: 1020px;
+            margin: 0 auto;
+            height: 100%;
+        }
+        #avatar {
+            width: 300px;
+            border-radius: 40px;
+            object-fit: contain;
+        }
+        .profile-link {
+            margin: 0 0.25em;
+            font-size: 22px;
+            font-weight: 500;
+        }
+    </style>
+    
+    <section class="flex-single-row flex-align-center">
+        <section class="flex-single-col flex-align-center">
+            <main class="flex-single-col flex-align-center">
+                <img id="avatar" src="/img/logo.png"  alt="avatar">
+                <h1>
+                    请随意替换此文本，或者不要
+                </h1>
+                <div>
+                    
+                    <a class="button-link profile-link" href="https://yue1124.github.io/hero/diska/">磁盘A</a>
+                    
+                    <a class="button-link profile-link" href="https://yue1124.github.io/hero/diskb/">磁盘B</a>
+                    
+                    <a class="button-link profile-link" href="https://yue1124.github.io/hero/diskc/">磁盘C</a>
+                    
+                    <a class="button-link profile-link" href="https://yue1124.github.io/hero/diskd/">磁盘D</a>
+                    
+                </div>
+                <div>
+                    
+                    <a class="button-link profile-link" href="tags">标签</a>
+                    
+                    <a class="button-link profile-link" href="categories">分类</a>
+                    
+                </div>
+            </main>
+        </section>
+    </section>
+    
+</div>
+
+                    </div>
+                </main>
+            </div>
+            
+            <section id="search-result">
+                <div class="flex-single-row">
+                    <div id="search-result-mask" class="flex-row-item flex-rest-item"></div>
+                    <div id="result-mask-divider" class="flex-row-item divider-vertical" style="height: auto;"></div>
+                    <div id="search-result-content" class="flex-row-item">
+                        输入回车键，查看搜索结果。
+                    </div>
+                </div>
             </section>
-        </main>
-    </body>
+        </section>
+    </main>
+    <script>
+        document.getElementById("nav-parent").onclick = function(e) {
+            
+        }
+        document.getElementById("nav-home").onclick = function(e) {
+            
+        }
+    </script>
+    
+</body>
 </html>
-

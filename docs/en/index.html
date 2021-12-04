@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
+	<meta name="generator" content="Hugo 0.90.0-DEV" />
 
 
 
@@ -11,12 +12,12 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="bigyue">
-<meta name="description" content="关于主题hero的样例网站">
+<meta name="description" content="A demo of theme hero">
 
 
 
 
-<title>themes | 样例</title>
+<title>Demo</title>
 
 
 
@@ -41,12 +42,12 @@
         <section id="title-bar" class="flex-col-item">
             <div class="flex-single-row flex-align-center">
                 <div class="flex-single-row flex-rest-item with-border flex-align-center">
-                    <div class="flex-row-item">样例</div>
+                    <div class="flex-row-item">Demo</div>
                     <div class="flex-row-item divider-vertical"></div>
-                    <div class="flex-row-item">关于主题hero的样例网站</div>
+                    <div class="flex-row-item">A demo of theme hero</div>
                     <div class="flex-row-item divider-vertical"></div>
                     
-                    <div class="flex-row-item flex-rest-item" style="text-align: center; white-space: nowrap;">themes</div>
+                    <div class="flex-row-item flex-rest-item" style="text-align: center; white-space: nowrap;">Demo</div>
                     
                     
                     <div class="flex-row-item divider-vertical"></div>
@@ -71,23 +72,7 @@
                     
 
     
-        
     
-        
-    
-    
-    
-
-    
-    
-        <div class="flex-row-item"><i class="iconfont icon-jiantouyou"></i></div>
-        <a class="flex-row-item link" href="https://yue1124.github.io/hero/categories/">Categories</a>
-    
-
-    
-    
-        <div class="flex-row-item"><i class="iconfont icon-jiantouyou"></i></div>
-        <a class="flex-row-item link" href="https://yue1124.github.io/hero/categories/themes/">themes</a>
     
 
 
@@ -100,7 +85,7 @@
                 </section>
                 <section id="search-tool" class="flex-single-row flex-row-item with-border flex-align-center">
                     <span><i class="iconfont icon-sousuo"></i></span>
-                    <input id="search-input" placeholder='搜索' type="text" />
+                    <input id="search-input" placeholder='Search' type="text" />
                 </section>
             </div>
         </section>
@@ -113,6 +98,29 @@
                         
     
     
+        <div id="section-widget" class="widget">
+    <span class="widget-header">
+        <i class="iconfont icon-jiantouxia widget-fold-control"></i>All Sections
+    </span>
+    <div class="widget-body" style="user-select: none;">
+        <div class="flex-single-col">
+            
+        </div>
+    </div>
+</div>
+        <div id="welcome-widget" class="widget">
+    <span class="widget-header">
+        <i class="iconfont icon-jiantouxia widget-fold-control"></i>
+        
+        你好呀！^.^
+        
+    </span>
+    <div class="widget-body" style="user-select: none;">
+        
+        这里是Hugo主题hero的样例网站，更多详细信息请查看主题首页。
+        
+    </div>
+</div>
 
                     </section>
                     <div class="width-control"></div>
@@ -123,6 +131,47 @@
                         
     
     
+        <div id="profile-block" class="block">
+    <style>
+        #profile-block {
+            max-width: 1020px;
+            margin: 0 auto;
+            height: 100%;
+        }
+        #avatar {
+            width: 300px;
+            border-radius: 40px;
+            object-fit: contain;
+        }
+        .profile-link {
+            margin: 0 0.25em;
+            font-size: 22px;
+            font-weight: 500;
+        }
+    </style>
+    
+    <section class="flex-single-row flex-align-center">
+        <section class="flex-single-col flex-align-center">
+            <main class="flex-single-col flex-align-center">
+                <img id="avatar" src="/img/logo.png"  alt="avatar">
+                <h1>
+                    请随意替换此文本，或者不要
+                </h1>
+                <div>
+                    
+                </div>
+                <div>
+                    
+                    <a class="button-link profile-link" href="tags">标签</a>
+                    
+                    <a class="button-link profile-link" href="categories">分类</a>
+                    
+                </div>
+            </main>
+        </section>
+    </section>
+    
+</div>
 
                     </div>
                 </main>
@@ -141,10 +190,10 @@
     </main>
     <script>
         document.getElementById("nav-parent").onclick = function(e) {
-                window.location.href = "https://yue1124.github.io/hero/categories/";
+            
         }
         document.getElementById("nav-home").onclick = function(e) {
-                window.location.href = "https://yue1124.github.io/hero/";
+            
         }
     </script>
     
