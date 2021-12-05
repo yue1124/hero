@@ -4,13 +4,13 @@
 name = "hero"
 license = "MIT"
 licenselink = "https://github.com/yue1124/hero/blob/main/LICENSE"
-description = "A hugo theme with File Manager Style. (Hugo Explorer ReadOnly)"
+description = "A Hugo theme with file explorer style. (Hugo Explorer ReadOnly)"
 
 homepage = "https://github.com/yue1124/hero"
 demosite = "https://yue1124.github.io/hero/"
 
-tags = ['simple', 'font awesome', 'katex', 'explorer', 'search']
-features = ['explorer', 'search', 'katex', 'toc']
+tags = ['simple', 'iconfont', 'dark mode support', 'explorer', 'search']
+features = ['explorer', 'search', 'dark mode support']
 
 [author]
   name = "bigyue"
